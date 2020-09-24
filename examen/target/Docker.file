@@ -1,0 +1,6 @@
+FROM openjdk:8-jdk-alphine
+ARG PROPIEDADES_FILE=target/application.properties
+COPY ${PROPIEDADES_FILE} application.properties
+ARG JAR_FILE=target/examen-0.0.1-SNAPSHOT.jar
+COPY ${JAR_FILE} examen-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar", "-Dserver.port=8080","-Dspring.config.location=application.properties","examen-0.0.1-SNAPSHOT.jar"]

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %t %level %c %msg %n"/>
+        </Console>
+        <File fileName="Log.log" name="FileLogin">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %level %msg %n"/>
+        </File>
+        <File fileName="logsServices/cliente/Log.log" name="ArchivoCliente">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %level %msg %n"/>
+        </File>
+        <File fileName="logsServices/producto/Log.log" name="ArchivoProducto">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %level %msg %n"/>
+        </File>
+        <File fileName="logsServices/venta/Log.log" name="ArchivoVenta">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %level %msg %n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="ArchivoLogin"/>
+            <AppenderRef ref="ArchivoCliente"/>
+            <AppenderRef ref="ArchivoProducto"/>
+            <AppenderRef ref="ArchivoVenta"/>
+        </Root>
+    </Loggers>
+</Configuration>
